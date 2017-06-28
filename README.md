@@ -1,1 +1,8 @@
 # criteo_ctr_random_forest
+Internet advertising is a multi-billion dollar business and is growing rapidly. There are several major channels on the web for online advertising such as display advertising and search advertising. Display advertising is different from the search advertising in that it uses graphical banners placed on the publishers’ web pages. Among them, CPC is the most popular option, in which advertisers only pay when a user clicks on the ad. As a consequence, click through rate (CTR) prediction, which is defined as the problem of estimating the probability that a user clicks on an ad in a specific context, is crucial to online advertising.
+
+The Criteo data is a click prediction dataset that is approximately 370GB of gzip compressed TSV files (~1.3TB uncompressed), comprising more than 4.3 billion records. It is taken from 24 days of click data made available by Criteo. Each record in this dataset contains 40 columns: The first column is a label column that indicates whether a user clicks an add (value 1) or does not click one (value 0). The next 13 columns are numeric, and last 26 are categorical columns
+
+The columns are anonymized. The Click through rate (CTR): This is the percentage of clicks in the data. In this Criteo dataset, the CTR is about 3.3% or 0.033. I will be working with day_21 of the dataset on my local machine.
+
+Here some of the things I tried to improve my results: Improve class imbalance: Random Forest, undersampling Deal with high dimensional categories: hashing, ohe Examine outliers: remove/impute Deal with null values: remove/impute Work on new features Measurement: AUC
