@@ -16,14 +16,23 @@ I worked with sklearn using Random Forest and Logistical Regression.
 For my first model I replaced the nulls with zeros and used the FeatureHasher from sklearn. The baseline was .031 because of the extreme low number of 1’s and my first models did not do much better. After examining my data with EDA, I decided on the following tasks.
 
 •	Log transformations to the integer columns. The highly skewed I1 column, I transformed twice.
+
 •	Caped and floored the outliers above 95% and below 5%.
+
 •	Replaced the Nans in the integer columns with the mean.
+
 •	Replaced the Nans in the categorical columns with mode
+
 •	Columns with more than 35% null where turned into Boolean features.
+
 •	Examined column I8 and found the only negative value was -1. Because these are count columns, I assumed this is a data error or meant to be 0. Converted to 0.
+
 •	Binned I9 after studying the histogram and confirming 3 clusters of data.
+
 •	Created new features from correlations found in data that resulted in a 1 response.
+
 •	Used LabelEncoder on the highly dimensional categorical columns
+
 •	Used get_dummies on the lower dimensional categorical columns
    
 With all my work above, the needle wasn’t moving. My model was not learning. It was time to deal with the unbalanced data. I wanted to balance my data. To do this I read 7 million records from the data file grabbing the rows with 1’s. This got me 223,582 rows of the data with the response a 1.  Then I randomly read in 200,000 rows from my dataset and combined the two.  This give me a baseline of .542, more 1’s than 0’s.
